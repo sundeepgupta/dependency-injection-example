@@ -2,12 +2,12 @@ import Foundation
 
 class Song {
     private let lineStart = "This is "
+    private let lineEnd = "."
     private let phrases = [
         "the house that Jack built",
         "the malt that lay in",
         "the rat that ate"
     ]
-    private let lineEnd = ".\n"
     
     func line(number: Int) -> String {
         let linePhrases = self.phrases[0...number-1].reverse()

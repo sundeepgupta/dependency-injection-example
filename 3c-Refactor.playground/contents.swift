@@ -2,12 +2,12 @@ import Foundation
 
 class Song {
     private let lineStart = "This is "
+    private let lineEnd = "."
     private var phrases = [
         "the house that Jack built",
         "the malt that lay in",
         "the rat that ate"
     ]
-    private let lineEnd = ".\n"
     
     init(listChangers: Array<ListChanger>) {
         for listChanger in listChangers {
