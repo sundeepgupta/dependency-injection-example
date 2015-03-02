@@ -34,16 +34,16 @@ class Song {
     }
     
     private func repeatPhrases() {
-        self.phrases = Repeater().perform(self.phrases)
+        self.phrases = Repeater().result(self.phrases)
     }
     
     private func reversePhrases() {
-        self.phrases = Reverser().perform(self.phrases)
+        self.phrases = Reverser().result(self.phrases)
     }
 }
 
 class Repeater {
-    func perform(list: Array<String>) -> Array<String> {
+    func result(list: Array<String>) -> Array<String> {
         return list.map({ (item) -> String in
             return item + " " + item
         })
@@ -51,7 +51,7 @@ class Repeater {
 }
 
 class Reverser {
-    func perform(list: Array<String>) -> Array<String> {
+    func result(list: Array<String>) -> Array<String> {
         return list.reverse()
     }
 }

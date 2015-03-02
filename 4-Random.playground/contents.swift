@@ -48,6 +48,18 @@ class Reverser : ListChanger {
     }
 }
 
+class Shuffler : ListChanger {
+    func result(list: Array<String>) -> Array<String> {
+        var newList = list
+        let listCount = count(newList)
+        for i in 0..<(listCount - 1) {
+            let j = Int(arc4random_uniform(UInt32(listCount - i))) + i
+            swap(&newList[i], &newList[j])
+        }
+        return newList
+    }
+}
+
 let song = Song(listChangers: [])
 song.line(1)
 song.line(2)
@@ -71,3 +83,9 @@ repeatingReversingSong.line(1)
 repeatingReversingSong.line(2)
 repeatingReversingSong.line(3)
 repeatingReversingSong.recite()
+
+let shufflingSong = Song(listChangers: [Shuffler()])
+shufflingSong.line(1)
+shufflingSong.line(2)
+shufflingSong.line(3)
+shufflingSong.recite()
