@@ -36,8 +36,14 @@ class Song {
     }
 }
 
-let song = Song(repeat: true)
+let song = Song(repeat: false)
 song.line(1)
 song.line(2)
 song.line(3)
 song.recite()
+
+let repeatingSong = Song(repeat: true)
+repeatingSong.line(1)
+repeatingSong.line(2)
+repeatingSong.line(3)
+repeatingSong.recite()

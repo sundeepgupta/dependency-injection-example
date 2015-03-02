@@ -9,9 +9,13 @@ class Song {
     ]
     private let lineEnd = ".\n"
     
-    init(repeat: Bool) {
+    init(repeat: Bool, reverse: Bool) {
         if repeat {
             self.repeatPhrases()
+        }
+        
+        if reverse {
+            self.reversePhrases()
         }
     }
     
@@ -34,10 +38,32 @@ class Song {
             return phrase + " " + phrase
         })
     }
+    
+    private func reversePhrases() {
+        self.phrases = self.phrases.reverse()
+    }
 }
 
-let song = Song(repeat: true)
+let song = Song(repeat: false, reverse: false)
 song.line(1)
 song.line(2)
 song.line(3)
 song.recite()
+
+let repeatingSong = Song(repeat: true, reverse: false)
+repeatingSong.line(1)
+repeatingSong.line(2)
+repeatingSong.line(3)
+repeatingSong.recite()
+
+let reversingSong = Song(repeat: false, reverse: true)
+reversingSong.line(1)
+reversingSong.line(2)
+reversingSong.line(3)
+reversingSong.recite()
+
+let repeatingReversingSong = Song(repeat: true, reverse: true)
+repeatingReversingSong.line(1)
+repeatingReversingSong.line(2)
+repeatingReversingSong.line(3)
+repeatingReversingSong.recite()
