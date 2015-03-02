@@ -1,8 +1,6 @@
-// 0. Recite a line and the entire song. No dependencies yet.
-
 import Foundation
 
-struct Song {
+class Song {
     private let lineStart = "This is "
     private let phrases = [
         "the house that Jack built",
