@@ -1,5 +1,3 @@
-import Foundation
-
 class Song {
     private let lineStart = "This is "
     private let lineEnd = "."
