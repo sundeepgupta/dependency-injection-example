@@ -9,7 +9,9 @@ class Song {
     
     init(repeat: Bool) {
         if repeat {
-            self.repeatPhrases()
+            self.phrases = self.phrases.map({ (phrase: String) -> String in
+                return phrase + " " + phrase
+            })
         }
     }
     
@@ -25,12 +27,6 @@ class Song {
             lines.append(self.line(i))
         }
         return "\n".join(lines)
-    }
-    
-    private func repeatPhrases() {
-        self.phrases = self.phrases.map({ (phrase: String) -> String in
-            return phrase + " " + phrase
-        })
     }
 }
 
