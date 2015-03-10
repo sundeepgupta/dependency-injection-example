@@ -22,15 +22,10 @@ class Song {
     ]
     
     init(songType: String) {
-        switch songType {
-        case "repeat":
+        if songType == "repeat" {
             self.phrases = Repeater().result(self.phrases)
-        case "reverse":
+        } else if songType == "reverse" {
             self.phrases = Reverser().result(self.phrases)
-        case "normal":
-            println("Do nothing for normal song type")
-        default:
-            println("Error: Invalid song type.")
         }
     }
     

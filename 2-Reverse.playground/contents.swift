@@ -8,17 +8,12 @@ class Song {
     ]
     
     init(songType: String) {
-        switch songType {
-            case "repeat":
-                self.phrases = self.phrases.map({ (phrase: String) -> String in
-                    return phrase + " " + phrase
-                })
-            case "reverse":
-                self.phrases = self.phrases.reverse()
-            case "normal":
-                println("Do nothing for normal song type")
-            default:
-                println("Error: Invalid song type.")
+        if songType == "repeat" {
+            self.phrases = self.phrases.map({ (phrase: String) -> String in
+                return phrase + " " + phrase
+            })
+        } else if songType == "reverse" {
+            self.phrases = self.phrases.reverse()
         }
     }
     
