@@ -9,9 +9,9 @@ class Song {
     
     init(songType: String) {
         if songType == "repeat" {
-            self.phrases = self.phrases.map({ (phrase: String) -> String in
+            self.phrases = self.phrases.map { phrase -> String in
                 return phrase + " " + phrase
-            })
+            }
         } else if songType == "reverse" {
             self.phrases = self.phrases.reverse()
         }

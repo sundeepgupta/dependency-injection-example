@@ -9,9 +9,9 @@ class Song {
     
     init(repeat: Bool) {
         if repeat {
-            self.phrases = self.phrases.map({ (phrase: String) -> String in
+            self.phrases = self.phrases.map { phrase -> String in
                 return phrase + " " + phrase
-            })
+            }
         }
     }
     

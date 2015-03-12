@@ -4,9 +4,9 @@ protocol Remixer {
 
 class Repeater : Remixer {
     func result(list: Array<String>) -> Array<String> {
-        return list.map({ (item) -> String in
+        return list.map { item -> String in
             return item + " " + item
-        })
+        }
     }
 }
 
